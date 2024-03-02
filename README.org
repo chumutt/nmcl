@@ -11,15 +11,83 @@
 :ID:       d342121c-94a8-465b-a4a2-1dae53a16060
 :END:
 
-#+name:
+#+name: package
 #+begin_src lisp :tangle no :exports code
-
+(defpackage coin-toss
+  (:use :cl))
+(in-package :coin-toss)
 #+end_src
 
-#+name:
-#+begin_src lisp :tangle dir/file.lisp :mkdirp yes :noweb yes :exports code
-
+#+name: tosscoin
+#+begin_src lisp :tangle no :exports code
+(defun toss-coin ()
+  "Generates a random 'heads' or 'tails'."
+  (let ((number (random 2 (make-random-state t))))
+    (if (= number 0)
+        "heads"
+        "tails")))
 #+end_src
+
+#+RESULTS: tosscoin
+: TOSS-COIN
+
+#+name: prompt
+#+begin_src lisp :tangle no :exports code
+(defun prompt ()
+  "Gets user input, loops if it's not 'heads' or 'tails'."
+  (format t "Please enter heads or tails: ")
+  (force-output)
+  (let ((guess (string-downcase (read-line))))
+    (if (or (string= guess "heads")
+            (string= guess "tails"))
+        guess
+        (prompt))))
+#+end_src
+
+#+RESULTS: prompt
+: PROMPT
+
+#+name: game
+#+begin_src lisp :tangle no :exports code
+(defun game ()
+  "Runs the actual game."
+  (if (string= (prompt)
+               (toss-coin))
+      (format t "You win!~%")
+      (format t "You lose!~%")))
+#+end_src
+
+#+RESULTS: game
+: GAME
+
+#+name: cointoss
+#+begin_src lisp :tangle 1/main.lisp :mkdirp yes :noweb yes :exports code
+<<package>>
+
+<<tosscoin>>
+
+<<prompt>>
+
+<<game>>
+#+end_src
+
+Running game and entering a guess of "heads":
+
+#+begin_src lisp :tangle no :results output
+(game)
+#+end_src
+
+#+RESULTS:
+: Please enter heads or tails: You win!
+
+#+begin_example
+CL-USER> (game)
+Please enter heads or tails: heads
+You win!
+
+NIL
+CL-USER>
+#+end_example
 
 
 * 2. Rock Paper Scissors
