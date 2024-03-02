@@ -102,29 +102,33 @@ CL-USER>
 (in-package :rps)
 #+end_src
 
-#+name:
+#+name: 2-get-player-choice
 #+begin_src lisp :tangle no :exports code
-
+(defun get-player-choice (o)
+  (format t "Please enter either -> ~{\"~A\"~^, ~}: " options)
+  (force-output)
+  (if (member (string-downcase (read-line)) options)
+      (format t "It exists!~%")
+      (format t "It doesn't exist!~%"))
+  (first options))
 #+end_src
 
-#+name:
+#+name: 2-game
 #+begin_src lisp :tangle no :exports code
-
-#+end_src
-
-#+name:
-#+begin_src lisp :tangle no :exports code
-
-#+end_src
-
-#+name:
-#+begin_src lisp :tangle no :exports code
-
+(defun game ()
+  (let* ((options '("rock" "paper" "scissors"))
+         (cpu-choice (nth (random (length options) (make-random-state t)) options))
+         (player-choice (get-player-choice options)))
+    (format nil "Player: ~a, CPU: ~a~%" player-choice cpu-choice)))
 #+end_src
 
 #+name: rps
 #+begin_src lisp :tangle 2/main.lisp :mkdirp yes :noweb yes :exports code
 <<2-package>>
+
+<<2-get-player-choice>>
+
+<<2-game>>
 
 #+end_src
 
