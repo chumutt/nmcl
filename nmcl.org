@@ -1,0 +1,62 @@
+:PROPERTIES:
+:ID:       54eebe4b-9722-4c7c-8d7e-8d6eaf411599
+:END:
+#+title: Neil Munro's Common Lisp Course
+#+description: as transcribed by chumutt
+
+* 1. Coin Toss
+:PROPERTIES:
+:ID:       d342121c-94a8-465b-a4a2-1dae53a16060
+:END:
+
+#+name:
+#+begin_src lisp :tangle no :exports code
+
+#+end_src
+
+#+name:
+#+begin_src lisp :tangle dir/file.lisp :mkdirp yes :noweb yes :exports code
+
+#+end_src
+
+
+* 2. Rock Paper Scissors
+* 3. Hangman
+* 4. Tic Tac Toe
+** 4a.
+** 4b.
+** 4c
+* 5. Condition System
+** 5a.
+** 5b.
+* 6. Macros
+** 6a.
+** 6b.
+* 7. File I/O
+** 7a.
+** 7b.
+** 7c.
+* 8. Functional Programming
+** 8a. Map
+** 8b. Filter
+** 8c. Reduce
+** 8d. Map/Reduce
+** 8e. Lambdas
+** 8f. (More) Lambdas
+** 8g. (Even More) Lambdas
+* 9. Packages
+** 9a.
+** 9b. ASDF
+** 9c. ASDF Testing
+** 9d. Rove Testing
+* Project 1: Turing Machine
+** Part 1
+** Part 2
+** Part 3
+** Part 4
+** Part 5
+* 10. Object Oriented Programming (OOP)
+** 10a. Basic Structures (Structs)
+** 10b. Basic Classes
+** 10c. Basic Methods
+** 10d. Auxiliary (Aux) Methods
