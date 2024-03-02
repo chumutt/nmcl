@@ -4,6 +4,8 @@
 #+title: Neil Munro's Common Lisp Course
 #+description: as transcribed by chumutt
 
+[[https://www.youtube.com/watch?v=xyXDE5gP2QI&list=PLCpux10P7KDKPb4eI5b_qSnQaY1ePGKGK&pp=iAQB][Common Lisp]]
+
 * 1. Coin Toss
 :PROPERTIES:
 :ID:       d342121c-94a8-465b-a4a2-1dae53a16060
