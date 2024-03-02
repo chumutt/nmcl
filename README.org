@@ -11,14 +11,14 @@
 :ID:       d342121c-94a8-465b-a4a2-1dae53a16060
 :END:
 
-#+name: package
+#+name: 1-package
 #+begin_src lisp :tangle no :exports code
 (defpackage coin-toss
   (:use :cl))
 (in-package :coin-toss)
 #+end_src
 
-#+name: tosscoin
+#+name: 1-tosscoin
 #+begin_src lisp :tangle no :exports code
 (defun toss-coin ()
   "Generates a random 'heads' or 'tails'."
@@ -28,10 +28,10 @@
         "tails")))
 #+end_src
 
-#+RESULTS: tosscoin
+#+RESULTS: 1-tosscoin
 : TOSS-COIN
 
-#+name: prompt
+#+name: 1-prompt
 #+begin_src lisp :tangle no :exports code
 (defun prompt ()
   "Gets user input, loops if it's not 'heads' or 'tails'."
@@ -44,10 +44,10 @@
         (prompt))))
 #+end_src
 
-#+RESULTS: prompt
+#+RESULTS: 1-prompt
 : PROMPT
 
-#+name: game
+#+name: 1-game
 #+begin_src lisp :tangle no :exports code
 (defun game ()
   "Runs the actual game."
@@ -57,18 +57,18 @@
       (format t "You lose!~%")))
 #+end_src
 
-#+RESULTS: game
+#+RESULTS: 1-game
 : GAME
 
 #+name: cointoss
 #+begin_src lisp :tangle 1/main.lisp :mkdirp yes :noweb yes :exports code
-<<package>>
+<<1-package>>
 
-<<tosscoin>>
+<<1-tosscoin>>
 
-<<prompt>>
+<<1-prompt>>
 
-<<game>>
+<<1-game>>
 #+end_src
 
 Running game and entering a guess of "heads":
@@ -91,6 +91,43 @@ CL-USER>
 
 
 * 2. Rock Paper Scissors
+:PROPERTIES:
+:ID:       083d63d5-f4df-414c-8613-335af4824e83
+:END:
+
+#+name: 2-package
+#+begin_src lisp :tangle no :exports code
+(defpackage rps
+  (:use :cl))
+(in-package :rps)
+#+end_src
+
+#+name:
+#+begin_src lisp :tangle no :exports code
+
+#+end_src
+
+#+name:
+#+begin_src lisp :tangle no :exports code
+
+#+end_src
+
+#+name:
+#+begin_src lisp :tangle no :exports code
+
+#+end_src
+
+#+name:
+#+begin_src lisp :tangle no :exports code
+
+#+end_src
+
+#+name: rps
+#+begin_src lisp :tangle 2/main.lisp :mkdirp yes :noweb yes :exports code
+<<2-package>>
+
+#+end_src
+
 * 3. Hangman
 * 4. Tic Tac Toe
 ** 4a.
